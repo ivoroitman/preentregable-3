@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billetera Virtual</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="../CSS/styles.css">
+   <style>
+        body {
+            background-color: palevioletred;
+        }
+        
+        .wallet {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .balance {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff69b4;
+            flex: 1;
+        }
+        
+        .transactions {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .transaction {
+            padding: 10px;
+            background-color: palevioletred;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .transaction .amount {
+            font-weight: bold;
+        }
+
+        .button-container {
+            margin-top: 20px;
+
+    
+        }
+
+        .bg-color{
+            background-color: #ff69b4;
+        }
+    </style>
+      <!--Animations-->
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+
+  
+<div class="container text-center">
+        <h1 class="animate__animated animate__wobble">
+            Bienvenido Querido Cliente. Que gusto Tenerte Aqui!
+        </h1>
+      
+      
+      
+    
+    <div class="container">
+        <div class="wallet">
+            <div class="balance">
+                <h2 class="text-center text-pink">Billetera Virtual</h2>
+                <div class="balance">
+                    Saldo: $500.00
+                </div>
+            </div>
+            <div class="transactions">
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label for="amount">Monto:</label>
+                        <input type="number" class="form-control" id="amount" name="amount" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Tipo de transacción:</label>
+                        <select class="form-control" id="type" name="type" required>
+                            <option value="deposit">Ingresar dinero</option>
+                            <option value="withdraw">Retirar dinero</option>
+                            <option value="transfer">Transferir</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="transferToGroup" style="display: none;">
+                        <label for="transferTo">Transferir a:</label>
+                        <input type="text" class="form-control" id="transferTo" name="transferTo">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block bg-color">Realizar Transacción</button>
+                </form>
+                <div class="transaction-history">
+                    <h3>Historial de Pagos</h3>
+                    <div class="transaction">
+                        <div class="details">
+                            <div class="amount">-$50.00</div>
+                            <div class="date">27/05/2024</div>
+                        </div>
+                        <div class="type">Pago de factura</div>
+                    </div>
+                    <div class="transaction">
+                        <div class="details">
+                            <div class="amount">+$200.00</div>
+                            <div class="date">26/05/2024</div>
+                        </div>
+                        <div class="type">Recarga de saldo</div>
+                    </div>
+                    <div class="transaction">
+                        <div class="details">
+                            <div class="amount">-$100.00</div>
+                            <div class="date">25/05/2024</div>
+                        </div>
+                        <div class="type">Compra en línea</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('type').addEventListener('change', function() {
+            var transferToGroup = document.getElementById('transferToGroup');
+            if (this.value === 'transfer') {
+                transferToGroup.style.display = 'block';
+            } else {
+                transferToGroup.style.display = 'none';
+            }
+        });
+
+        document.getElementById('transactionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var amount = parseFloat(document.getElementById('amount').value);
+            var type = document.getElementById('type').value;
+            var transferTo = document.getElementById('transferTo').value;
+
+            if (isNaN(amount) || amount <= 0) {
+                alert('Ingrese un monto válido.');
+                return;
+            }
+
+            // Aquí puedes agregar la lógica para realizar la transacción y actualizar el saldo
+
+            // Simulación de la transacción (actualización del saldo)
+            var balance = 500; // Obtener el saldo actual de alguna fuente de datos
+            if (type === 'deposit') {
+                balance += amount;
+            } else if (type === 'withdraw') {
+                balance -= amount;
+            } else if (type === 'transfer') {
+                // Aquí podrías agregar lógica adicional para la transferencia
+                // Por ahora, simplemente restamos el monto transferido del saldo actual
+                balance -= amount;
+            }
+
+            // Actualización visual del saldo (solo simulación)
+            document.querySelector('.balance').textContent = 'Saldo: $' + balance.toFixed(2);
+
+            // Reiniciar el formulario
+            this.reset();
+
+            // Mensaje de confirmación (simulación)
+            alert('La transacción se realizó correctamente.');
+        });
+    </script>
+</body>
+</html>

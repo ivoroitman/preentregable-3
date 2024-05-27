@@ -1,0 +1,79 @@
+.navcolor{
+     background-color: palevioletred !important;
+}
+
+.parrafo-inicio{
+   font-size: 30px;
+   font-family: "Oswald", sans-serif;
+  
+}
+
+.navbar-brand{
+   size: 30px;
+}
+
+
+body {
+   background-color: palevioletred;
+}
+
+.wallet {
+   max-width: 600px;
+   margin: 50px auto;
+   background-color: #fff;
+   border-radius: 10px;
+   padding: 20px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   display: flex;
+   flex-direction: row;
+}
+
+.balance {
+   font-size: 24px;
+   text-align: center;
+   margin-bottom: 20px;
+   color: #ff69b4;
+   flex: 1;
+}
+
+.transactions {
+   flex: 1;
+   margin-left: 20px;
+}
+
+.transaction {
+   padding: 10px;
+   background-color: palevioletred;
+   border-radius: 5px;
+   margin-bottom: 10px;
+}
+
+.transaction .amount {
+   font-weight: bold;
+}
+
+.button-container {
+   margin-top: 20px;
+
+
+}
+
+.bg-color{
+   background-color: #ff69b4;
+}
+
+
+@keyframes agrandarse {
+   0% {
+      width: 0px;
+   }
+
+   100% {
+      width: 600px;
+   }
+}
+.wallet{
+   animation-duration: 2s;
+   animation-name: agrandarse;
+   animation-iteration-count: initial;
+}
