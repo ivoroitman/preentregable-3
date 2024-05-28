@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Crédito</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <div class="container2">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="text-center mb-4">Simulador de Crédito</h1>
+                        <form id="simuladorForm">
+                            <div class="form-group">
+                                <label for="monto">Monto del crédito:</label>
+                                <input type="number" class="form-control" id="monto" min="0" placeholder="Ingrese el monto">
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block" onclick="calcularCredito()">Calcular</button>
+                        </form>
+                        <div id="resultado" class="mt-4 text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y jQuery (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Script personalizado -->
+    <script src="../Java-script/code.js"></script>
+</body>
+</html>

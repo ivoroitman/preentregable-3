@@ -77,3 +77,52 @@ body {
    animation-name: agrandarse;
    animation-iteration-count: initial;
 }
+
+
+.btn-primary{
+   text-decoration: none;
+}
+
+
+@keyframes aparecer {
+   0% {
+      opacity: 0%;
+   }
+
+   100% {
+      opacity: 100%;
+   }
+}
+
+.pregunta{
+text-align: center;
+   animation-duration: 2s;
+   animation-name: aparecer;
+   animation-iteration-count: initial;
+}
+
+
+footer{
+   background-color: #ff69b4;
+}
+
+
+body {
+   background-color: #f8d7da; /* Rosa */
+}
+
+.card {
+   border: none;
+}
+
+.btn-primary {
+   background-color: #e83e8c; /* Rosa de Bootstrap */
+   border-color: #e83e8c; /* Rosa de Bootstrap */
+}
+
+.btn-primary:hover {
+   background-color: #d6336c; /* Rosa oscuro */
+   border-color: #d6336c; /* Rosa oscuro */
+}
+
+
