@@ -1,5 +1,11 @@
+$primary-bg-color: palevioletred;
+$secondary-bg-color: #ff69b4;
+$btn-primary-bg: #e83e8c;
+$btn-primary-hover-bg: #d6336c;
+$body-bg-color: #f8d7da;
+
 .navcolor {
-  background-color: palevioletred !important;
+  background-color: $primary-bg-color !important;
 }
 
 .parrafo-inicio {
@@ -12,7 +18,7 @@
 }
 
 body {
-  background-color: #f8d7da;
+  background-color: $body-bg-color;
 }
 
 .wallet {
@@ -33,7 +39,7 @@ body {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
-  color: #ff69b4;
+  color: $secondary-bg-color;
   flex: 1;
 }
 
@@ -44,12 +50,13 @@ body {
 
 .transaction {
   padding: 10px;
-  background-color: palevioletred;
+  background-color: $primary-bg-color;
   border-radius: 5px;
   margin-bottom: 10px;
-}
-.transaction .amount {
-  font-weight: bold;
+
+  .amount {
+    font-weight: bold;
+  }
 }
 
 .button-container {
@@ -57,7 +64,7 @@ body {
 }
 
 .bg-color {
-  background-color: #ff69b4;
+  background-color: $secondary-bg-color;
 }
 
 @keyframes agrandarse {
@@ -68,14 +75,16 @@ body {
     width: 600px;
   }
 }
+
 .btn-primary {
   text-decoration: none;
-  background-color: #e83e8c;
-  border-color: #e83e8c;
-}
-.btn-primary:hover {
-  background-color: #d6336c;
-  border-color: #d6336c;
+  background-color: $btn-primary-bg;
+  border-color: $btn-primary-bg;
+
+  &:hover {
+    background-color: $btn-primary-hover-bg;
+    border-color: $btn-primary-hover-bg;
+  }
 }
 
 @keyframes aparecer {
@@ -86,6 +95,7 @@ body {
     opacity: 100%;
   }
 }
+
 .pregunta {
   text-align: center;
   animation-duration: 2s;
@@ -94,11 +104,9 @@ body {
 }
 
 footer {
-  background-color: #ff69b4;
+  background-color: $secondary-bg-color;
 }
 
 .card {
   border: none;
 }
-
-/*# sourceMappingURL=styles.css.map */
